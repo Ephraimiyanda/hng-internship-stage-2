@@ -1,0 +1,57 @@
+import { Navbar ,NavbarBrand,NavbarContent,Input} from "@nextui-org/react";
+import Logo from "../public/tv.svg"
+import searchIcon from "../public/Search.svg"
+import Image from "next/image";
+import menu from "../public/Menu.svg"
+import { SearchIcon } from "./seachIcon";
+export default function Nav(){
+    return(
+        <div className=" bg-transparent w-full absolute">
+
+       
+        <Navbar
+        
+        style={{
+            margin:"auto",
+            backdropFilter:"none",
+            background:"transparent"
+        }}
+        maxWidth="xl"
+        className="bg-transparent m-auto flex justify-center border-b border-b-white"
+        >
+        <NavbarBrand className="gap-2">
+            <Image
+            src={Logo}
+            width={35}
+            height={35}
+            alt="icon"
+            />
+        <p className="font-bold text-inherit text-white">MovieBox</p>
+      </NavbarBrand>
+      <NavbarContent as="div" className="items-center" justify="end">
+        <Input
+          classNames={{
+            base: "max-w-full w-full h-10 lg:w-[500px]",
+            mainWrapper: "h-full w-full",
+            input: "text-small",
+            inputWrapper: "h-full font-normal text-default-500 bg-transparent border border-white",
+          }}
+          placeholder="What do you want to watch ?"
+          size="sm"
+          endContent={<SearchIcon />}
+          type="search"
+        />
+        </NavbarContent>
+        <NavbarContent className="items-center" justify="end">
+            <p className="text-white">Sign in</p>
+            <Image
+            src={menu}
+            width={35}
+            height={35}
+            alt="menu"
+            />
+        </NavbarContent>
+        </Navbar>
+         </div>
+    )
+}
