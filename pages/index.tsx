@@ -3,6 +3,8 @@ import Image from "next/image";
 import IMdb from "../public/imdb.png";
 import tomatoe from "../public/rotten tomatoes.svg";
 import MovieCard from "@/components/card";
+import { Button } from "@nextui-org/react";
+import PlayIcon from "@/components/playIcon";
 interface MovieProps {
   release_date: string;
   title: string;
@@ -68,9 +70,10 @@ export default function Home() {
                 backgroundSize: "cover", // Ensure background image covers the entire container
                 backgroundPosition: "top", // Center the background image
               }}
-              className="h-full"
+              className="h-full "
             >
-              <div className="h-full flex flex-col justify-center text-white pl-4 sm:pl-10 lg:pl-20">
+              <div className="flex justify-left max-w-[1280px] m-auto items-center h-full">
+              <div className="h-full flex flex-col gap-1 justify-center text-white pl-4 ">
                 <h1 className="text-3xl font-bold max-w-[404px] text-left">
                   {movie.title} :
                 </h1>
@@ -90,11 +93,12 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-lg max-w-[332px]">{movie.overview}</p>
-                {/* You can display more information about the movie here */}
+               <Button color="danger" radius="sm" className="w-[150px]" startContent={<PlayIcon/>}>Watch Trailer</Button>
+              </div>
               </div>
             </div>
           </div>
-          <div className="pt-3 grid grid-col-auto">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 lg:grid-cols-4 gap-2 justify-center max-w-[1280px] m-auto px-6 py-6">
             {topMovies &&
               topMovies.map((movies: MovieProps) => (
                 <MovieCard 
