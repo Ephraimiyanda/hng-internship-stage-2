@@ -16,7 +16,7 @@ export default function MyApp({ Component, pageProps }:AppProps) {
         <title>My movie plug</title>
         <link 
         rel="icon" 
-        href="../app/icon.svg"
+        href="/icon.svg?<generated>"
         />
       </Head> 
       
