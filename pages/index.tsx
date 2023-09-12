@@ -102,6 +102,7 @@ export default function Home() {
             {topMovies &&
               topMovies.map((movies: MovieProps) => (
                 <MovieCard 
+                key={movies.id}
                 title={movies.title} poster_path={movies.poster_path} id={movies.id} release_date={movies.release_date}                 
                 />
               ))}
