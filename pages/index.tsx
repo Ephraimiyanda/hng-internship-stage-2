@@ -5,6 +5,7 @@ import tomatoe from "../public/rotten tomatoes.svg";
 import MovieCard from "@/components/card";
 import { Button } from "@nextui-org/react";
 import PlayIcon from "@/components/playIcon";
+import Loader from "@/components/loading";
 interface MovieProps {
   release_date: string;
   title: string;
@@ -24,9 +25,10 @@ export default function Home() {
     try {
       const apiKey = "c539753a1f88f569625d05489744019a";
       const res = await fetch(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
+        `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}`
       );
       const randomMoviesData = await res.json();
+      console.log(randomMoviesData);
       const trendingMovies = randomMoviesData.results;
       const randomTrendingMovie =
         trendingMovies[Math.floor(Math.random() * trendingMovies.length)];
@@ -54,7 +56,7 @@ export default function Home() {
   }, []); // Empty dependency array to run the effect only once
 
   if (!movie || !bgImg) {
-    return <div>Loading...</div>; // You can replace this with a loading indicator component
+    return <Loader/>
   }
   return (
     <div>
@@ -79,7 +81,7 @@ export default function Home() {
                 </h1>
                 <div className="flex items-center gap-3">
                   <div className="flex gap-1">
-                    <Image src={IMdb} alt="imdb score" width={30} height={30} />
+                    <Image src={IMdb} alt="imdb score" width={35} height={20} />
                     <p>{movie.vote_count}/100</p>
                   </div>
                   <div className="flex gap-1">

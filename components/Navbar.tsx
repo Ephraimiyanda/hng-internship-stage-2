@@ -4,6 +4,7 @@ import searchIcon from "../public/Search.svg"
 import Image from "next/image";
 import menu from "../public/Menu.svg"
 import { SearchIcon } from "./seachIcon";
+import Link from "next/link";
 export default function Nav(){
     return(
         <div className=" bg-transparent w-full absolute">
@@ -20,6 +21,9 @@ export default function Nav(){
         className="bg-transparent m-auto flex justify-center border-b border-b-white"
         >
         <NavbarBrand className="gap-2">
+           <Link href={"/"}
+           className="flex items-center gap-2"
+           >
             <Image
             src={Logo}
             width={35}
@@ -27,6 +31,7 @@ export default function Nav(){
             alt="icon"
             />
         <p className="font-bold text-inherit text-white">MovieBox</p>
+      </Link>
       </NavbarBrand>
       <NavbarContent as="div" className="items-center" justify="end">
         <Input
