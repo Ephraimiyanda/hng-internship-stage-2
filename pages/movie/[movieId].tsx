@@ -161,7 +161,7 @@ export default function MovieDetails() {
       fetchCredits();
       fetchTrendingMovies();
     }
-  }, []);
+  }, [router.isReady]);
 
     // If movie details are not available, display a loading spinner
   if (!movieDetails) {
@@ -306,10 +306,10 @@ return <div className="h-screen justify-center items-center flex">⚠️<p class
                         trendingMovies.map((movies:any)=>{
                             const{poster_path,title,id}=movies;
                             return (
-                              <Link href={`/movie/${id}`} className="w-full">
+                              <Link href={`/movie/${id}`} className="w-full" key={id}>
                               
                             <Image
-                            key={id}
+                            
                             className=" min-w-[100px]"
                             style={{
                                 borderRadius:"0px",
