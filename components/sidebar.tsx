@@ -10,7 +10,7 @@ import Image from "next/image";
 export default function SideBar() {
   return (
     <div>
-      <aside className="fixed z-[30] flex items-center h-[30px] sm:flex-col sm:relative bg-white border-t sm:bottom-[0] bottom-[22px] w-full  sm:w-[140px] lg:w-[170px] sm:rounded-e-[35px] sm:h-screen sm:border border-gray-400 pt-8 ">
+      <aside className="fixed z-[30] flex items-center h-[30px] sm:flex-col sm:gap-4 sm:relative bg-white border-t sm:bottom-[0] bottom-[22px] w-full  sm:w-[140px] lg:w-[170px] sm:rounded-e-[35px] sm:h-screen sm:border border-gray-400 pt-8 ">
         <Link href="/" className="flex gap-1 text-black  pl-3 sm:pl-0">
           <Image src={Logo} alt="imdb score" width={30} height={30} className="" />
           <p className="hidden sm:block font-bold text-inherit bg-white text-black">MoviBox</p>
@@ -82,6 +82,15 @@ export default function SideBar() {
             </Link>
           </li>
         </ul>
+        <div style={{
+          background:"rgba(190, 18, 60, 0.1)"
+        }} className="flex flex-col px-3 py-3 border border-[#BE123C] max-w-[120px] rounded-lg gap-2 text-[10px] ">
+          <p className="text-sm font-medium">
+            play movie quizes and earn free tickets
+          </p>
+          <p>50% of peoples are playing now</p>
+        <Button variant="flat" color="danger" className="h-[30px]">start playing</Button>
+        </div>
       </aside>
     </div>
   );

@@ -2,12 +2,16 @@ import { Card, CardBody, CardFooter, Image,CardHeader, Button } from "@nextui-or
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Bookmark from "./bookmark";
+import TomatoeImg from "./tomatoe";
+import ImdbImg from "./imdb";
 
 interface cardprops {
   title: string;
   poster_path: string;
   id: number;
   release_date: string;
+  vote_count:number;
+  vote_average:number;
 }
 
 
@@ -16,6 +20,8 @@ export default function MovieCard({
   poster_path,
   id,
   release_date,
+  vote_count,
+  vote_average
 }: cardprops) {
   const router=useRouter()
   return (
@@ -26,9 +32,11 @@ export default function MovieCard({
           <Button style={{
             background:"transparent",
             marginLeft:"auto",
-            width:"30px",
-            padding:"2px"
-          }} startContent={<Bookmark/>}>
+            width:"fit",
+            padding:"2px",
+            minWidth:"fit-content"
+          }}
+          startContent={<Bookmark/>}>
           </Button>
         </CardHeader>
           <Image
@@ -44,6 +52,16 @@ export default function MovieCard({
         </CardBody>
         <CardFooter className="text-small justify-between flex flex-col p-0 items-start py-2">
           <Link className="text-left" href={`/movie/${id}`}><b data-testid="movie-title" className="text-left">{title}</b></Link>
+          <div className="flex items-center gap-5">
+                  <div className="flex gap-1">
+                  <ImdbImg/> 
+                    <p>{vote_count}/100</p>
+                  </div>
+                  <div className="flex gap-1">
+                   <TomatoeImg/>
+                    <p>{10 * +vote_average.toFixed(0)}%</p>
+                  </div>
+                </div>
           <p data-testid="movie-release-date" className="text-default-500 text-left">
             {release_date}
           </p>

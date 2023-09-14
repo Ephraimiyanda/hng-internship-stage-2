@@ -39,7 +39,7 @@ export default function Home() {
       const randomTrendingMovie =
         trendingMovies[Math.floor(Math.random() * trendingMovies.length)];
       setMovie(randomTrendingMovie);
-      setTopMovies(trendingMovies);
+      setTopMovies(trendingMovies.slice(0,10));
 
       setBgImg(
         `https://image.tmdb.org/t/p/original/${randomTrendingMovie.backdrop_path}`
@@ -83,10 +83,10 @@ export default function Home() {
             >
               <div className="flex justify-left max-w-[1280px] m-auto items-center h-full">
               <div className="h-full flex flex-col gap-1 justify-center text-white pl-4 ">
-                <h1 className="text-3xl font-bold max-w-[404px] text-left">
+                <h1 className="text-5xl font-bold max-w-[504px] text-left">
                   {movie.title} :
                 </h1>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-5">
                   <div className="flex gap-1">
                     <Image src={IMdb} alt="imdb score" width={35} height={20} />
                     <p>{movie.vote_count}/100</p>
@@ -98,10 +98,10 @@ export default function Home() {
                       width={20}
                       height={20}
                     />
-                    <p>{10 * movie.vote_average}%</p>
+                    <p>{10 *+ movie.vote_average.toFixed(0)}%</p>
                   </div>
                 </div>
-                <p className="text-lg max-w-[332px]">{movie.overview}</p>
+                <p className="text-lg max-w-[452px]">{movie.overview}</p>
                <Button as={Link} href={`/movie/${movie.id}`} color="danger"  radius="sm" className="w-[150px]" startContent={<PlayIcon/>}>Watch Trailer</Button>
               </div>
               </div>
@@ -117,7 +117,7 @@ export default function Home() {
               topMovies.map((movies: MovieProps) => (
                 <MovieCard 
                 key={movies.id}
-                title={movies.title} poster_path={movies.poster_path} id={movies.id} release_date={movies.release_date}                 
+                title={movies.title} poster_path={movies.poster_path} id={movies.id} release_date={movies.release_date} vote_count={movies.vote_count} vote_average={movies.vote_average}                
                 />
               ))}
           </div>
