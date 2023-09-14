@@ -48,8 +48,10 @@ export default function Nav(){
           className="hidden sm:block"
         />
         </NavbarContent>
-        <NavbarContent className="items-center" justify="end">
-            <p className="text-white">Sign in</p>
+        <NavbarContent style={{
+          width:"100px"
+        }} className="items-center w-60px" justify="end">
+            <p className="text-white whitespace-nowrap w-[50px]">Sign in</p>
             <Image
             src={menu}
             width={35}
