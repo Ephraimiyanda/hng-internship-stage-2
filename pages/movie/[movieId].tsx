@@ -142,7 +142,7 @@ export default function MovieDetails() {
 
   return (
     <RootLayout>
-      <div className="flex flex-col px-3 pt-2 w-[85%] overflow-x-hidden  m-auto h-screen overscroll-y-auto">
+      <div className="flex flex-col px-3 pt-2 w-full sm:w-[85%] overflow-x-hidden  m-auto h-screen overscroll-y-auto sm:pb-0 pb-[360px]">
         <div className="h-screen ">
           {video ? (
             <iframe
@@ -204,7 +204,7 @@ export default function MovieDetails() {
               </div>
             </div>
             <div className="flex  justify-between gap-2 flex-col md:flex-row w-full ">
-              <div className="flex flex-col gap-3 w-full md:w-[50%] lg:w-[70%]">
+              <div className="flex flex-col gap-3 w-full md:w-[50%] lg:w-[60%] xl:w-[70%]">
                 <p className="pb-4" data-testid="movie-overview">
                   {movieDetails.overview}
                 </p>

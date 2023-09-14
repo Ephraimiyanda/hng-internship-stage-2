@@ -10,18 +10,18 @@ import Image from "next/image";
 export default function SideBar() {
   return (
     <div>
-      <aside className=" w-[50px] sm:w-[140px] lg:w-[170px] rounded-e-[35px] h-screen border border-gray-400 pt-8 ">
-        <Link href="/" className="flex gap-1 text-black  max-w-[100px] pl-3 sm:pl-4 lg:p-6">
+      <aside className="fixed z-[30] flex items-center h-[30px] sm:flex-col sm:relative bg-white border-t sm:bottom-[0] bottom-[22px] w-full  sm:w-[140px] lg:w-[170px] sm:rounded-e-[35px] sm:h-screen sm:border border-gray-400 pt-8 ">
+        <Link href="/" className="flex gap-1 text-black  pl-3 sm:pl-0">
           <Image src={Logo} alt="imdb score" width={30} height={30} className="" />
-          <p className="hidden sm:block font-bold text-inherit text-black">MoviBox</p>
+          <p className="hidden sm:block font-bold text-inherit bg-white text-black">MoviBox</p>
         </Link>
 
-        <ul className="flex flex-col gap-2 pt-10">
+        <ul className="flex w-full justify-around sm:justify-[unset] sm:flex-col gap-2 sm:pt-10 bg-white">
           <li>
             <Link
               href="/"
              color="danger"
-              className="w-full h-[45px] pl-4 lg:p-6 flex  m-auto  gap-2 text-center text-black hover:text-[#BE123C] hover:bg-[#BE123C] hover:bg-opacity-40 hover:border-r-3 border-[#BE123C]"
+              className="w-full h-[45px] pl-4 lg:p-6 flex  m-auto items-center  gap-2 text-center text-black hover:text-[#BE123C] hover:bg-[#BE123C] hover:bg-opacity-40 hover:border-r-3 border-[#BE123C]"
             >
               <Image
                 className="justify-start"
