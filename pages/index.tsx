@@ -50,7 +50,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const interval = setInterval(fetchRandomMovie, 10000); // Change image every 10 seconds
+    const interval = setInterval(fetchRandomMovie, 5000); // Change image every 10 seconds
 
     // Initial fetch
     fetchRandomMovie();
