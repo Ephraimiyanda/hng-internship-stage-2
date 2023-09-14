@@ -167,12 +167,12 @@ export default function MovieDetails() {
   if (!movieDetails) {
     return <Loader />;
   }else if(connectionError){
-return <div className="h-screen justify-center items-center"><p>You are not connected to the internet</p></div>
+return <div className="h-screen justify-center items-center flex">⚠️<p className="text-red-900">You are not connected to the internet</p></div>
 }
   // Render the movie details component
   return (
     <RootLayout>
-      <div className="flex flex-col px-3 pt-2 w-full sm:w-[85%] overflow-x-hidden  m-auto h-screen overscroll-y-auto sm:pb-0 pb-[380px]" key={movieDetails.id}>
+      <div className="flex flex-col px-3 pt-2 w-full sm:w-[85%] overflow-x-hidden  m-auto h-screen overscroll-y-auto sm:pb-0 pb-[390px]" key={movieDetails.id}>
         <div className="h-screen ">
           {video ? (
             <iframe
