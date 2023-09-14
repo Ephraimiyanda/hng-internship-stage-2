@@ -340,3 +340,4 @@ return <div className="h-screen justify-center items-center flex">⚠️<p class
     </RootLayout>
   );
 }
+//rubix_cube={las_col-↑,top_row-→,last_col-↓,face_col-↺}*9
