@@ -5,15 +5,16 @@ import Home from "../public/Home.svg"
 import camera from "../public/Movie Projector.svg"
 import tvIcon from "../public/TV Show.svg"
 import Calendar from "../public/Calendar.svg"
+import logout from "../public/Logout.svg"
 import Image from "next/image";
 
 export default function SideBar() {
   return (
     <div>
-      <aside className="fixed z-[30] flex items-center h-[30px] sm:flex-col sm:gap-4 sm:relative bg-white border-t sm:bottom-[0] bottom-[22px] w-full  sm:w-[140px] lg:w-[170px] sm:rounded-e-[35px] sm:h-screen sm:border border-gray-400 pt-8 ">
-        <Link href="/" className="flex gap-1 text-black  pl-3 sm:pl-0">
+      <aside className="fixed z-[30] flex items-center h-fit sm:flex-col sm:gap-4 sm:relative bg-white border-t sm:bottom-[0] bottom-[0px] w-full  sm:w-[140px] lg:w-[170px] sm:rounded-e-[35px] sm:h-screen sm:border border-gray-400 sm:pt-8 ">
+        <Link href="/" className="hidden sm:flex gap-1 text-black  pl-3 sm:pl-0 bg-white">
           <Image src={Logo} alt="imdb score" width={30} height={30} className="" />
-          <p className="hidden sm:block font-bold text-inherit bg-white text-black">MoviBox</p>
+          <p className=" font-bold text-inherit  text-black">MoviBox</p>
         </Link>
 
         <ul className="flex w-full justify-around sm:justify-[unset] sm:flex-col gap-2 sm:pt-10 bg-white">
@@ -27,8 +28,8 @@ export default function SideBar() {
                 className="justify-start"
                 src={Home}
                 alt="Home"
-                width={20}
-                height={20}
+                width={25}
+                height={25}
               />
               <p className="text-center hidden sm:block">Home</p>
             </Link>
@@ -43,8 +44,8 @@ export default function SideBar() {
                 className="justify-start"
                 src={camera}
                 alt="Movies"
-                width={20}
-                height={20}
+                width={25}
+                height={25}
               />
               <p className="text-center hidden sm:block">Movies</p>
             </Link>
@@ -59,8 +60,8 @@ export default function SideBar() {
                 className="justify-start"
                 src={tvIcon}
                 alt="Tv Series"
-                width={20}
-                height={20}
+                width={25}
+                height={25}
               />
               <p className="text-center hidden sm:block">Tv Series</p>
             </Link>
@@ -75,8 +76,8 @@ export default function SideBar() {
               className="justify-start"  
               src={Calendar}
                 alt="Upcoming"
-                width={20}
-                height={20}
+                width={25}
+                height={25}
               />
               <p className="text-center hidden sm:block">Upcoming</p>
             </Link>
@@ -84,12 +85,21 @@ export default function SideBar() {
         </ul>
         <div style={{
           background:"rgba(190, 18, 60, 0.1)"
-        }} className="flex flex-col px-3 py-3 border border-[#BE123C] max-w-[120px] rounded-lg gap-2 text-[10px] ">
+        }} className="hidden sm:flex flex-col px-3 py-3 border border-[#BE123C] max-w-[120px] rounded-lg gap-2 text-[10px] ">
           <p className="text-sm font-medium">
             play movie quizes and earn free tickets
           </p>
           <p>50% of peoples are playing now</p>
         <Button variant="flat" color="danger" className="h-[30px]">start playing</Button>
+        </div>
+        <div className="w-[25%] flex justify-center items-center">
+<Image
+src={logout}
+alt="logout"
+width={35}
+height={25}
+/>
+<p className="text-center hidden sm:block">Logout</p>
         </div>
       </aside>
     </div>
