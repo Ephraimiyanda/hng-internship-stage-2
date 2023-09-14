@@ -33,7 +33,8 @@ export default function MovieCard({
             background:"transparent",
             marginLeft:"auto",
             width:"fit",
-            padding:"2px",
+            padding:"4px",
+            borderRadius:"23px",
             minWidth:"fit-content"
           }}
           startContent={<Bookmark/>}>
