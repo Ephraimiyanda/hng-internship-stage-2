@@ -161,7 +161,7 @@ export default function MovieDetails() {
       fetchCredits();
       fetchTrendingMovies();
     }
-  }, [router.isReady]);
+  }, [router.isReady,movieId]);
 
     // If movie details are not available, display a loading spinner
   if (!movieDetails) {
