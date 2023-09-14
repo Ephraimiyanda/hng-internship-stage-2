@@ -10,7 +10,7 @@ import {Suspense} from "react"
 import Loader from "@/components/loading";
 export default function MyApp({ Component, pageProps }:AppProps) {
 const router =useRouter()
-    return (<Suspense fallback={<Loader/>}>
+    return (
      <NextUIProvider>
       <div>
       <Head>
@@ -22,10 +22,10 @@ const router =useRouter()
         />
       </Head> 
     {!router.pathname.includes("/movie")&&<Nav/>}
-    
+    <Suspense fallback={<Loader/>}>
     <Component {...pageProps} />
-    
+    </Suspense>
   </div>
-  </NextUIProvider></Suspense>
+  </NextUIProvider>
     );
   }

@@ -1,9 +1,14 @@
+"use client"
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import IMdb from "../public/imdb.png";
 import tomatoe from "../public/rotten tomatoes.svg";
+import instagram from "../public/instagram.svg";
+import twitter from "../public/twitter.svg";
+import facebook from "../public/facebook.svg";
+import youtube from "../public/youtube.svg";
 import MovieCard from "@/components/card";
-import { Button } from "@nextui-org/react";
+import { Button,Link } from "@nextui-org/react";
 import PlayIcon from "@/components/playIcon";
 import Loader from "@/components/loading";
 interface MovieProps {
@@ -20,7 +25,8 @@ export default function Home() {
   const [movie, setMovie] = useState<MovieProps>();
   const [bgImg, setBgImg] = useState("");
   const [topMovies, setTopMovies] = useState<any>();
-  
+
+ 
   const fetchRandomMovie = async () => {
     try {
       const apiKey = "c539753a1f88f569625d05489744019a";
@@ -60,6 +66,7 @@ export default function Home() {
   }
   return (
     <div>
+
       {movie && bgImg && (
         <div>
           <div
@@ -95,12 +102,17 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-lg max-w-[332px]">{movie.overview}</p>
-               <Button color="danger" radius="sm" className="w-[150px]" startContent={<PlayIcon/>}>Watch Trailer</Button>
+               <Button as={Link} href={`/movie/${movie.id}`} color="danger"  radius="sm" className="w-[150px]" startContent={<PlayIcon/>}>Watch Trailer</Button>
               </div>
               </div>
             </div>
-          </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 lg:grid-cols-4 gap-2 justify-center max-w-[1280px] m-auto px-6 py-6">
+          </div>    
+           <div className="flex justify-between max-w-[1280px] pt-3 m-auto px-6">
+            <h2 className=" text-lg font-medium">Featured Movie </h2>
+            <p className="text-[#BE123C]">see more &gt; </p>
+            </div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 lg:grid-cols-4 gap-2 justify-center max-w-[1280px] m-auto px-6 py-4">
+
             {topMovies &&
               topMovies.map((movies: MovieProps) => (
                 <MovieCard 
@@ -111,6 +123,40 @@ export default function Home() {
           </div>
         </div>
       )}
+      <footer className="flex flex-col items-center py-10 gap-3">
+        <div className="flex gap-5">
+          <Image
+          src={facebook}
+          width={30}
+          height={30}
+          alt="facebook"
+          />
+          <Image
+          src={instagram}
+          width={30}
+          height={30}
+          alt="instagram"
+          />
+          <Image
+          src={twitter}
+          width={30}
+          height={30}
+          alt="twitter"
+          />
+          <Image
+          src={youtube}
+          width={30}
+          height={30}
+          alt="youtube"
+          />
+        </div>
+        <ul className="text-black font-medium flex flex-col text-center sm:flex-row gap-3">
+          <li>Conditions of Use </li>
+          <li>Privacy & Policy</li>
+          <li>Press Room</li>
+        </ul>
+        <p  className="text-[#6B7280]">&copy; { new Date().getUTCFullYear()} MovieBox by Ephraim Iyanda</p>
+      </footer>
     </div>
   );
 }
