@@ -22,7 +22,7 @@ export default function SideBar() {
             <Link
               href="/"
              color="danger"
-              className="w-full h-[45px] pl-4 lg:p-6 flex  m-auto items-center  gap-2 text-center text-black hover:text-[#BE123C] hover:bg-[#BE123C] hover:bg-opacity-40 hover:border-r-3 border-[#BE123C]"
+              className="w-full h-[45px] pl-4 lg:p-6 flex  m-auto items-center  gap-2 text-center text-black sm:hover:text-[#BE123C] sm:hover:bg-[#BE123C] sm:hover:bg-opacity-40 sm:hover:border-r-3 border-[#BE123C]"
             >
               <Image
                 className="justify-start"
@@ -38,7 +38,7 @@ export default function SideBar() {
             <Link
               href="#"
               color="danger"
-              className="w-full h-[45px] pl-4 lg:p-6 flex  m-auto  gap-2 text-center text-black hover:text-[#BE123C] hover:bg-[#BE123C] hover:bg-opacity-40 hover:border-r-3 border-[#BE123C]"
+              className="w-full h-[45px] pl-4 lg:p-6 flex  m-auto  gap-2 text-center text-black sm:hover:text-[#BE123C] sm:hover:bg-[#BE123C] sm:hover:bg-opacity-40 sm:hover:border-r-3 border-[#BE123C]"
             >
               <Image
                 className="justify-start"
@@ -54,7 +54,7 @@ export default function SideBar() {
             <Link
               href="#"
               color="danger"
-              className="w-full h-[45px] pl-4 lg:p-6 flex  m-auto  gap-2 text-center text-black hover:text-[#BE123C] hover:bg-[#BE123C] hover:bg-opacity-40 hover:border-r-3 border-[#BE123C]"
+              className="w-full h-[45px] pl-4 lg:p-6 flex  m-auto  gap-2 text-center text-black sm:hover:text-[#BE123C] sm:hover:bg-[#BE123C] sm:hover:bg-opacity-40 sm:hover:border-r-3 border-[#BE123C]"
             >
               <Image
                 className="justify-start"
@@ -70,7 +70,7 @@ export default function SideBar() {
             <Link
               href="#"
               color="danger"
-              className="w-full h-[45px] pl-4 lg:p-6  m-auto  flex gap-2 text-center text-black hover:text-[#BE123C] hover:bg-[#BE123C] hover:bg-opacity-40 hover:border-r-3 border-[#BE123C]"
+              className="w-full h-[45px] pl-4 lg:p-6  m-auto  flex gap-2 text-center text-black sm:hover:text-[#BE123C] sm:hover:bg-[#BE123C] sm:hover:bg-opacity-40 sm:hover:border-r-3 border-[#BE123C]"
             >
               <Image
               className="justify-start"  
@@ -92,7 +92,9 @@ export default function SideBar() {
           <p>50% of peoples are playing now</p>
         <Button variant="flat" color="danger" className="h-[30px]">start playing</Button>
         </div>
-        <div className="w-[25%] flex justify-center items-center">
+        <Button style={{
+          background:"white"
+        }} className="w-[25%] sm:w-[70%] flex justify-center items-center">
 <Image
 src={logout}
 alt="logout"
@@ -100,7 +102,7 @@ width={35}
 height={25}
 />
 <p className="text-center hidden sm:block">Logout</p>
-        </div>
+        </Button>
       </aside>
     </div>
   );

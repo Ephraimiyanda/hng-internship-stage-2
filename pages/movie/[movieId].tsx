@@ -264,7 +264,7 @@ return <div className="h-screen justify-center items-center flex">⚠️<p class
                 <div className=" border border-[#f87193] rounded-[18px] flex  items-center w-full">
                   <Button color="danger" className="px-1 w-full md:w-[240px]">Top rated movie #65</Button>
                   <div className="flex justify-between px-1 pr-0 w-full items-center">
-                    <p className=" text-[14px]">Awards 9 nominations</p>
+                    <p className=" text-[12px] sm:text-base">Awards 9 nominations</p>
                     <Button
                       style={{
                         width: "16px",
