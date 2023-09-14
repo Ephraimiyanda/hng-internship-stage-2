@@ -11,7 +11,9 @@ import Loader from "@/components/loading";
 export default function MyApp({ Component, pageProps }:AppProps) {
 const router =useRouter()
     return (
-     <NextUIProvider>
+    <Suspense fallback={<Loader/>}>
+
+    <NextUIProvider>
       <div>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,10 +24,10 @@ const router =useRouter()
         />
       </Head> 
     {!router.pathname.includes("/movie")&&<Nav/>}
-    <Suspense fallback={<Loader/>}>
+    
     <Component {...pageProps} />
-    </Suspense>
   </div>
   </NextUIProvider>
+    </Suspense>
     );
   }

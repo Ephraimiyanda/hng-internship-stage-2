@@ -1,6 +1,8 @@
-import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, Image,CardHeader, Button } from "@nextui-org/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Bookmark from "./bookmark";
+
 interface cardprops {
   title: string;
   poster_path: string;
@@ -20,6 +22,15 @@ export default function MovieCard({
     <div className="sm:justify-self-center w-fit col-auto">
       <Card key={id} data-testid="movie-card" className=" w-[265px] md:w-[230px] sm:w-[280px] lg:w-[240px] " radius="none" shadow="none" isPressable onPress={()=>router.push(`/movie/${id}`)}>
         <CardBody className="overflow-visible p-0">
+        <CardHeader className="absolute z-20 top-1 flex-col !items-start">
+          <Button style={{
+            background:"transparent",
+            marginLeft:"auto",
+            width:"30px",
+            padding:"2px"
+          }} startContent={<Bookmark/>}>
+          </Button>
+        </CardHeader>
           <Image
            radius="none"
             data-testid="movie-poster"

@@ -10,10 +10,10 @@ import Image from "next/image";
 export default function SideBar() {
   return (
     <div>
-      <aside className="w-[140px] lg:w-[170px] rounded-e-[35px] h-screen border border-gray-400 pt-8 ">
-        <Link href="/" className="flex gap-1 text-black  max-w-[100px]  pl-4 lg:p-6">
-          <Image src={Logo} alt="imdb score" width={30} height={30} />
-          <p className="font-bold text-inherit text-black">MoviBox</p>
+      <aside className=" w-[50px] sm:w-[140px] lg:w-[170px] rounded-e-[35px] h-screen border border-gray-400 pt-8 ">
+        <Link href="/" className="flex gap-1 text-black  max-w-[100px] pl-3 sm:pl-4 lg:p-6">
+          <Image src={Logo} alt="imdb score" width={30} height={30} className="" />
+          <p className="hidden sm:block font-bold text-inherit text-black">MoviBox</p>
         </Link>
 
         <ul className="flex flex-col gap-2 pt-10">
@@ -30,7 +30,7 @@ export default function SideBar() {
                 width={20}
                 height={20}
               />
-              <p className="text-center">Home</p>
+              <p className="text-center hidden sm:block">Home</p>
             </Link>
           </li>
           <li>
@@ -46,7 +46,7 @@ export default function SideBar() {
                 width={20}
                 height={20}
               />
-              <p className="text-center">Movies</p>
+              <p className="text-center hidden sm:block">Movies</p>
             </Link>
           </li>
           <li>
@@ -62,7 +62,7 @@ export default function SideBar() {
                 width={20}
                 height={20}
               />
-              <p className="text-center">Tv Series</p>
+              <p className="text-center hidden sm:block">Tv Series</p>
             </Link>
           </li>
           <li>
@@ -78,7 +78,7 @@ export default function SideBar() {
                 width={20}
                 height={20}
               />
-              <p className="text-center">Upcoming</p>
+              <p className="text-center hidden sm:block">Upcoming</p>
             </Link>
           </li>
         </ul>

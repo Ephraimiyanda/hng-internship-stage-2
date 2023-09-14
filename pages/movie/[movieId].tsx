@@ -139,18 +139,7 @@ export default function MovieDetails() {
   if (!movieDetails) {
     return <Loader />;
   }
-  const isOnline = useOnlineStatus();
 
-  // ...
-
-  // Check if there's no internet connection and display an error message
-  if (!isOnline) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <p className="text-red-500 text-xl">No internet connection.</p>
-      </div>
-    );
-  }
   return (
     <RootLayout>
       <div className="flex flex-col px-3 pt-2 w-[85%] overflow-x-hidden  m-auto h-screen overscroll-y-auto">
@@ -298,14 +287,14 @@ export default function MovieDetails() {
                     }
                             <CardFooter style={{
                                 paddingLeft:"0px",
-                            }} className="flex justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+                            }} className="flex  before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
                                <Image
                                
                                src={WhiteList}
                                width={20}
                                height={20}
                                alt="white list"/>
-                               <p className="text-white text-[10px] items-center ">The Best Movies and Shows in {month[new Date().getMonth()]}</p> 
+                               <p className="text-white text-[10px] items-start ">The Best Movies and Shows in {month[new Date().getMonth()]}</p> 
                             </CardFooter>
                     </Card>
                 </div>
