@@ -11,7 +11,7 @@ export default function Nav(){
 
        
         <Navbar
-        
+        isBlurred={false}
         style={{
             margin:"auto",
             backdropFilter:"none",
@@ -45,6 +45,7 @@ export default function Nav(){
           size="sm"
           endContent={<SearchIcon />}
           type="search"
+          className="hidden sm:block"
         />
         </NavbarContent>
         <NavbarContent className="items-center" justify="end">
