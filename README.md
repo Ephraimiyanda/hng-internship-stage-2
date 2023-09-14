@@ -21,12 +21,12 @@ This project uses next/font to automatically optimize and load Inter, a custom G
 About
 This is an awesome website where you can view movies and their details. Here are some of the features:
 
-.View movie details
-.Save your favorite movies
-.Watch movie trailers
-.View cast members
-.Read up about movies
-.See movie ratings
+View movie details,
+Save your favorite movies,
+Watch movie trailers,
+View cast members,
+Read up about movies,
+See movie ratings.
 
 Learn More
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
