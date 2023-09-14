@@ -8,6 +8,7 @@ import Image from "next/image";
 import Showtimes from "@/components/showtimes";
 import Options from "@/components/options";
 import WhiteList from "../../public/whiteLists.svg"
+import Link from "next/link";
 interface movieprops {
   title: string;
   release_date: string;
@@ -171,7 +172,7 @@ return <div className="h-screen justify-center items-center"><p>You are not conn
   // Render the movie details component
   return (
     <RootLayout>
-      <div className="flex flex-col px-3 pt-2 w-full sm:w-[85%] overflow-x-hidden  m-auto h-screen overscroll-y-auto sm:pb-0 pb-[360px]" key={movieDetails.id}>
+      <div className="flex flex-col px-3 pt-2 w-full sm:w-[85%] overflow-x-hidden  m-auto h-screen overscroll-y-auto sm:pb-0 pb-[380px]" key={movieDetails.id}>
         <div className="h-screen ">
           {video ? (
             <iframe
@@ -206,7 +207,7 @@ return <div className="h-screen justify-center items-center"><p>You are not conn
                     {movieDetails.runtime}m
                   </span>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                   {movieDetails.genres.map((genre: any) => (
                     <Button
                       color="danger"
@@ -263,7 +264,7 @@ return <div className="h-screen justify-center items-center"><p>You are not conn
                 <div className=" border border-[#f87193] rounded-[18px] flex  items-center w-full">
                   <Button color="danger" className="px-1 w-full md:w-[240px]">Top rated movie #65</Button>
                   <div className="flex justify-between px-1 pr-0 w-full items-center">
-                    <p>Awards 9 nominations</p>
+                    <p className=" text-[14px]">Awards 9 nominations</p>
                     <Button
                       style={{
                         width: "16px",
@@ -305,6 +306,8 @@ return <div className="h-screen justify-center items-center"><p>You are not conn
                         trendingMovies.map((movies:any)=>{
                             const{poster_path,title,id}=movies;
                             return (
+                              <Link href={`/movie/${id}`} className="w-full">
+                              
                             <Image
                             key={id}
                             className=" min-w-[100px]"
@@ -312,6 +315,7 @@ return <div className="h-screen justify-center items-center"><p>You are not conn
                                 borderRadius:"0px",
                                 width:"100%"
                             }} src={`https://image.tmdb.org/t/p/original/${poster_path}`} width={100} height={100} alt={`${title}_poster`}></Image>
+                            </Link>
                             )
                         })
                     }
