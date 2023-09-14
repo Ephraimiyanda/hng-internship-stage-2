@@ -233,7 +233,7 @@ return <div className="h-screen justify-center items-center flex">⚠️<p class
                 </span>
               </div>
             </div>
-            <div className="flex  justify-between gap-2 flex-col md:flex-row w-full ">
+            <div className="flex  justify-between gap-2 flex-col md:flex-row w-full pb-10">
               <div className="flex flex-col gap-4 w-full md:w-[50%] lg:w-[60%] xl:w-[70%]">
                 <p className="pb-4" data-testid="movie-overview">
                   {movieDetails.overview}
