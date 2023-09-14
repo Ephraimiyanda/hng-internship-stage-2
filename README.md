@@ -6,12 +6,12 @@ Getting Started
 To get started, run the development server:
 
 bash
-Copy code
-npm run dev
-# or
+
+#npm run dev
+ or
 yarn dev
-# or
-pnpm dev
+ or
+#pnpm dev
 Open http://localhost:3000 in your browser to see the result.
 
 You can start editing the page by modifying app/page.tsx. The page auto-updates as you edit the file.
