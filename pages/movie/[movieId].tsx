@@ -298,7 +298,6 @@ return <div className="h-screen justify-center items-center"><p>You are not conn
                     <Card className="flex " style={{
                         flexDirection:"row",
                         height:"100%",
-                        maxHeight:"170px",
                         width:"100%"
                     }}>
                     {trendingMovies &&
