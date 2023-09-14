@@ -20,6 +20,7 @@ interface movieprops {
   };
   vote_average: number;
   vote_count: number;
+  id:number;
 }
 export default function MovieDetails() {
    // State variables to store movie details, video, and other data
@@ -159,7 +160,7 @@ export default function MovieDetails() {
       fetchCredits();
       fetchTrendingMovies();
     }
-  }, [movieId]);
+  }, [router.isReady]);
 
     // If movie details are not available, display a loading spinner
   if (!movieDetails) {
@@ -170,7 +171,7 @@ return <div className="h-screen justify-center items-center"><p>You are not conn
   // Render the movie details component
   return (
     <RootLayout>
-      <div className="flex flex-col px-3 pt-2 w-full sm:w-[85%] overflow-x-hidden  m-auto h-screen overscroll-y-auto sm:pb-0 pb-[360px]">
+      <div className="flex flex-col px-3 pt-2 w-full sm:w-[85%] overflow-x-hidden  m-auto h-screen overscroll-y-auto sm:pb-0 pb-[360px]" key={movieDetails.id}>
         <div className="h-screen ">
           {video ? (
             <iframe
@@ -302,9 +303,10 @@ return <div className="h-screen justify-center items-center"><p>You are not conn
                     }}>
                     {trendingMovies &&
                         trendingMovies.map((movies:any)=>{
-                            const{poster_path,title}=movies;
+                            const{poster_path,title,id}=movies;
                             return (
                             <Image
+                            key={id}
                             className=" min-w-[100px]"
                             style={{
                                 borderRadius:"0px",
