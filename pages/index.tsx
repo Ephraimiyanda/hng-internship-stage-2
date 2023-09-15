@@ -32,7 +32,7 @@ export default function Home() {
     try {
       const apiKey = "c539753a1f88f569625d05489744019a";
       const res = await fetch(
-        `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}`
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`
       );
       const randomMoviesData = await res.json();
       const trendingMovies = randomMoviesData.results;
