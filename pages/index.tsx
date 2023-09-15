@@ -28,13 +28,13 @@ export default function Home() {
 
  
   const fetchRandomMovie = async () => {
+    
     try {
       const apiKey = "c539753a1f88f569625d05489744019a";
       const res = await fetch(
         `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}`
       );
       const randomMoviesData = await res.json();
-      console.log(randomMoviesData);
       const trendingMovies = randomMoviesData.results;
       const randomTrendingMovie =
         trendingMovies[Math.floor(Math.random() * trendingMovies.length)];
@@ -109,7 +109,7 @@ export default function Home() {
           </div>    
            <div className="flex justify-between max-w-[1280px] pt-3 m-auto px-6">
             <h2 className=" text-lg font-medium">Featured Movie </h2>
-            <p className="text-[#BE123C]">see more &gt; </p>
+           <div className="flex items-center text-[#BE123C]"> <p className=" pt-[6px] gap-1">see more </p><span className="text-3xl"> › </span></div>
             </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 lg:grid-cols-4 gap-2 justify-center max-w-[1280px] m-auto px-6 py-4">
 

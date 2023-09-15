@@ -48,12 +48,12 @@ export default function MovieCard({
             alt={title}
             className="w-full object-cover h-[260px]"
 
-            src={`https://image.tmdb.org/t/p/original/${poster_path}`}
+            src={poster_path?`https://image.tmdb.org/t/p/original/${poster_path}`:"https://pic.onlinewebfonts.com/thumbnails/icons_490278.svg"}
           />
         </CardBody>
-        <CardFooter className="text-small justify-between flex flex-col p-0 items-start py-2">
+        <CardFooter className="text-small justify-between flex flex-col  items-start py-2 px-1">
           <Link className="text-left" href={`/movie/${id}`}><b data-testid="movie-title" className="text-left">{title}</b></Link>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 ">
                   <div className="flex gap-1">
                   <ImdbImg/> 
                     <p>{vote_count}/100</p>

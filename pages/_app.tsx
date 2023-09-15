@@ -28,7 +28,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             />
           </Head>
           {/* Render the navigation component if the current path does not include "/movie" */}
-          {!router.pathname.includes("/movie") && <Nav />}
+          {!router.pathname.includes("/movie")&&!router.pathname.includes("/search") && <Nav />}
           {/* Render the main component */}
           <Component {...pageProps} />
         </div>

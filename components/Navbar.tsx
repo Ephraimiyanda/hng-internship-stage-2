@@ -1,11 +1,15 @@
-import { Navbar ,NavbarBrand,NavbarContent,Input} from "@nextui-org/react";
+import { Navbar ,NavbarBrand,NavbarContent,Input, Button} from "@nextui-org/react";
 import Logo from "../public/tv.svg"
 import searchIcon from "../public/Search.svg"
 import Image from "next/image";
 import menu from "../public/Menu.svg"
 import { SearchIcon } from "./seachIcon";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
+
 export default function Nav(){
+  const router = useRouter();
     return(
         <div className=" bg-transparent w-full absolute">
 
@@ -35,6 +39,7 @@ export default function Nav(){
       </NavbarBrand>
       <NavbarContent as="div" className="items-center" justify="end">
         <Input
+        onClick={()=>(router.push("/search"))}
           classNames={{
             base: "max-w-full w-full h-10 lg:w-[500px]",
             mainWrapper: "h-full w-full",
@@ -51,6 +56,18 @@ export default function Nav(){
         <NavbarContent style={{
           width:"100px"
         }} className="items-center w-60px" justify="end">
+          <Button
+          as={Link}
+          prefetch
+          href="/search"
+          style={{
+            width:"fit-content",
+            background:"transparent",
+            color:"white",
+          }}
+          className="sm:hidden items-center flex"
+          startContent={<SearchIcon/>}>
+          </Button>
             <p className="text-white whitespace-nowrap w-[50px]">Sign in</p>
             <Image
             src={menu}
