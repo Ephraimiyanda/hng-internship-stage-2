@@ -39,7 +39,6 @@ export default function Search() {
       const searchData = await searchRes.json();
 
       setSearchedItems(searchData.results);
-      router.push(`/search?query=${inputValue}`);
     } catch (error) {
       console.log(error);
     } finally {
@@ -116,7 +115,7 @@ export default function Search() {
             />
           ))
         )}
-       { searchedItems.length< 1? ( <div className="flex h-[80vh] w-full grid-cols-4 m-auto col-span-6 justify-center items-center text-red-600"><p>⚠️ There was no movie matching your search</p></div>):""}
+       {!loading&& searchedItems.length===0? ( <div className="flex h-[80vh] w-full grid-cols-4 m-auto col-span-6 justify-center items-center text-red-600"><p>⚠️ There was no movie matching your search</p></div>):""}
       </div>
     </div>
   );
