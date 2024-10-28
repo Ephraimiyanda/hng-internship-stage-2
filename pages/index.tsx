@@ -50,15 +50,11 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const interval = setInterval(fetchRandomMovie, 5000); // Change image every 10 seconds
-
+ 
     // Initial fetch
     fetchRandomMovie();
 
-    return () => {
-      // Clear the interval when the component unmounts
-      clearInterval(interval);
-    };
+  
   }, []); // Empty dependency array to run the effect only once
 
   if (!movie || !bgImg) {
